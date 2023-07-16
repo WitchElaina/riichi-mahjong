@@ -10,6 +10,7 @@ interface MahjongTileProps {
   darkMode: boolean;
   isDora: boolean;
   width?: string;
+  is3d?: boolean;
 }
 
 interface TileMapping {
@@ -50,27 +51,34 @@ export const MahjongTile: React.FC<MahjongTileProps> = ({
   tile,
   darkMode,
   isDora,
-  width = '6rem',
+  width = '4rem',
+  is3d = true,
 }) => {
   // get SVG file path
   const tileStr = convertTileStr(tile);
   const svgPath = `assets/${darkMode ? 'Black' : 'Regular'}/${tileStr}.svg`;
-  // const backgroundPath = `assets/${darkMode ? 'Black' : 'Regular'}/Front.svg`;
-  const backgroundColor = darkMode ? '#000' : 'rgb(255, 247, 238)';
+
   // set isDora to true if the tile is aka dora, which is 0m, 0p and 0s
   if (tile[0] === '0') {
     isDora = true;
   }
   return (
     <div className="tile-wrapper" style={{ width }}>
-      <div className="tile-border" />
-      <div className="tile-background" style={{ backgroundColor }}>
-        {/* <img src={backgroundPath} alt="tile background" draggable="false" /> */}
-      </div>
+      {is3d && (
+        <>
+          <div className={darkMode ? 'tile-back-dark' : 'tile-back'} />
+          <div className={darkMode ? 'tile-border-dark' : 'tile-border'} />
+        </>
+      )}
+      <div className={darkMode ? 'tile-background-dark' : 'tile-background'} />
       <div className="tile-name">
         <img src={svgPath} alt={tile} draggable="false" />
       </div>
-      {isDora && <div className="tile-dora-layer" />}
+      {isDora && (
+        <div className="tile-dora-layer" style={{ opacity: darkMode ? 0.1 : 1 }}>
+          <div className="tile-dora-layer-inner"></div>
+        </div>
+      )}
     </div>
   );
 };

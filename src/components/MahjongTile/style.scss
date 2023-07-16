@@ -3,7 +3,7 @@
   user-select: none;
   margin-top: 20px;
   border: 0;
-  border-radius: 15px;
+  border-radius: 8px;
   
   .tile-name {
     object-fit: cover;
@@ -15,36 +15,109 @@
       height: 100%;
     }
   }
-
+  
   .tile-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px -25px #000000;
+    border-radius: 8px;
+    background-color:rgb(255, 247, 238);
     z-index: -1;
   }
-
+  
+  .tile-background-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgb(43, 41, 41);
+    z-index: -1;
+  }
+  
+  .tile-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #f79e2a;
+    transform: translateY(-16px);
+    z-index: -3;
+  }
+  
+  .tile-back-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #161418;
+    transform: translateY(-16px);
+    z-index: -3;
+  }
+  
   .tile-border {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    background-color: #fca519;
-    transform: translateY(-10px);
+    border-radius: 8px;
+    background-color: rgb(227, 227, 227);
+    transform: translateY(-8px);
+    z-index: -2;
+  }
+  
+  .tile-border-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color:rgb(52, 49, 49);
+    transform: translateY(-8px);
     z-index: -2;
   }
 }
 
-.tile-wrapper:hover {
-  cursor: pointer;
-  transform: translateY(-5px) scale(1.05);
-  transition: all 0.5s ease-in-out;
+.tile-dora-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+    .tile-dora-layer-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400%;
+        height: 200%;
+        border-radius: inherit;
+        background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        animation: dora 3s infinite;
+        z-index: -1;
+    }
 }
 
+@keyframes dora {
+    0% {
+        transform: rotate(-40deg) translateY(-150%);
+    }
+    100% {
+        transform: rotate(-40deg) translateY(100%);
+    }
+}
 
-
+.tile-wrapper:hover {
+  cursor: pointer;
+  transform: translateY(-20%);
+}
