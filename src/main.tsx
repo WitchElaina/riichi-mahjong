@@ -2,26 +2,9 @@ import ReactDOM from 'react-dom/client';
 
 import './style.scss';
 
-import { MahjongTileArray } from './components/MahjongTileArray';
+import { strToHaiArr } from './utils/tileConvert';
+import { hairi } from 'syanten';
 
-const tileArray = [
-  '1m',
-  '9m',
-  '1p',
-  '9p',
-  '1s',
-  '9s',
-  '1z',
-  '2z',
-  '3z',
-  '4z',
-  '5z',
-  '6z',
-  '7z',
-] as MahjongTile[];
+const out = strToHaiArr('6p7p77p7p8p8p2s3s6s7s15z8p');
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <>
-    <MahjongTileArray tileArray={tileArray} darkMode={false} isDora={false} />
-  </>,
-);
+ReactDOM.createRoot(document.getElementById('root')!).render(<>{JSON.stringify(hairi(out))}</>);
