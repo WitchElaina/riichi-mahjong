@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 
 import './style.scss';
 
-import { MahjongTile } from './components/MahjongTile/MahjongTile';
+import { MahjongTile } from './components/MahjongTile';
 
 const tileClass = ['m', 'p', 's'];
 

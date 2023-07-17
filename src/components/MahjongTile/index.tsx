@@ -1,5 +1,5 @@
 /***
- * MahjongTile.tsx
+ * MahjongTile
  * @author WitchElaina
  * @description A component for a single Mahjong tile
  */
