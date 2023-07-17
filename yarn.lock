@@ -1498,6 +1498,11 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+syanten@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/syanten/-/syanten-1.6.0.tgz#36d723bd2a2efab0001af937039d4589d96226b6"
+  integrity sha512-XUqLs0KSvxzu6oX9kpw8do4KyhmAeNgMq9qm3RD7UmCPp7DljViRC2m38rkNqPsCGAXz/+rEQCzj4XHcL1Lu0Q==
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
