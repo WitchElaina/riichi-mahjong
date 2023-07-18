@@ -22,12 +22,8 @@ export const strToHaiArr = (str: string): HaiArr => {
 
   const reg = /\d+[mps]|[1-7]+z/g;
 
-  while (true) {
-    const result = reg.exec(str);
-    if (result === null) {
-      break;
-    }
-
+  let result = reg.exec(str);
+  while (result !== null) {
     const hai = result[0];
     const num = hai.slice(0, -1);
     const type = hai.slice(-1);
@@ -38,6 +34,7 @@ export const strToHaiArr = (str: string): HaiArr => {
       }
       haiArr[typeToIndex[type]][Number(n) - 1] += 1;
     });
+    result = reg.exec(str);
   }
   return haiArr;
 };
